@@ -1,6 +1,7 @@
-#OpenCV modified for cross-compilation on the Raspberry Pi 3
+# OpenCV modified for cross-compilation on the Raspberry Pi 3
 
 A few files have been modified to facilitate cross compilation.
+
 ./CMakeLists.txt
 ./platforms/linux/arm.toolchain.cmake
 
@@ -15,11 +16,14 @@ If you change the path to which these directories are copied, you'll also
 need to adjust the cmake_cmd.txt configuration script accordingly.
 
 To compile, run the following from the root of the repo
+
+```bash
 mkdir build
 cd build
 cp ../cmake_cmd.txt .
 ./cmake_cmd.txt # this will do the configuration
 make
+```
 
 Then you can run `make install` to install the files to 
 CMAKE_INSTALL_PREFIX. From there, copy them to the pi 
