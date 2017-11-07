@@ -1,0 +1,21 @@
+export RANLIB=/opt/arm/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-ranlib
+export PATH=$PATH:/opt/arm/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin
+export CC=arm-linux-gnueabihf-gcc
+
+cmake \
+-D CMAKE_TOOLCHAIN_FILE=../platforms/linux/arm-gnueabi.toolchain.cmake \
+-D CMAKE_BUILD_TYPE=RELEASE \
+-D CMAKE_INSTALL_PREFIX=/opt/arm/raspi/sysroot \
+-D INSTALL_C_EXAMPLES=OFF \
+-D INSTALL_PYTHON_EXAMPLES=OFF \
+-D BUILD_EXAMPLES=OFF \
+-D ENABLE_NEON=ON \
+-D ENABLE_VFPV3=ON \
+-D WITH_TBB=ON \
+-D BUILD_TBB=ON \
+-D BUILD_opencv_python2=ON \
+-D PYTHON2_LIBRARIES=/opt/arm/raspi/sysroot/usr/lib/arm-linux-gnueabihf/libpython2.7.so \
+-D PYTHON2_INCLUDE_PATH=/opt/arm/raspi/sysroot/usr/include/python2.7 \
+-D PYTHON2_NUMPY_INCLUDE_DIRS=/opt/arm/raspi/sysroot/usr/lib/python2.7/dist-packages/numpy/core/include \
+-D BUILD_TESTS=OFF \
+-D INSTALL_PYTHON_EXAMPLES=OFF ../
