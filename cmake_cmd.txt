@@ -1,5 +1,7 @@
+export PKG_CONFIG_SYSROOT_DIR=/opt/arm/raspi/sysroot
+export PKG_CONFIG_PATH=/opt/arm/raspi/sysroot/usr/lib/arm-linux-gnueabihf/pkgconfig/
 export RANLIB=/opt/arm/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-ranlib
-export PATH=$PATH:/opt/arm/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin
+export PATH=/opt/arm/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin:$PATH
 export CC=arm-linux-gnueabihf-gcc
 
 cmake \
@@ -18,4 +20,5 @@ cmake \
 -D PYTHON2_INCLUDE_PATH=/opt/arm/raspi/sysroot/usr/include/python2.7 \
 -D PYTHON2_NUMPY_INCLUDE_DIRS=/opt/arm/raspi/sysroot/usr/lib/python2.7/dist-packages/numpy/core/include \
 -D BUILD_TESTS=OFF \
+-D PKG_CONFIG_EXECUTABLE=/opt/arm/gcc-linearo-arm/linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-pkg-config \
 -D INSTALL_PYTHON_EXAMPLES=OFF ../
